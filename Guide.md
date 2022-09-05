@@ -1,9 +1,19 @@
 # Selenium-Python-Hybrid-Framework-Design
-### Selenium Framework Design From Scratch Using Python
+
+###  ⚫ The things this guide contains
+            ---> Pytest unit testing framework
+            ---> Logging and HTML report
+            ---> Page Object Design Pattern
+            ---> Data driven framework with excel
+            ---> Git
+            ---> Integration of framework to Jenkins
+            
 ###  ⚫ Theory
+
 #### ⚫ What is PIP installer Tool?
 pip is a package management system used to install and manage software packages written in Python
 pip is a recursive acronym that can stand for either "Pip Installs Packages" or "Pip Installs Python.
+
 
 #### ⚫ Types of Wait in Selenium?
             --- Explicit Waits
@@ -67,9 +77,13 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                                     myDynamicElement = driver.find_element_by_id("myDynamicElement")
 
 
+###  ⚫ Framework Design Step by Step
+
+
 #### ⚫ What is XPath?
             --- XPath stands for XML Path Language	
             --- XPath uses "path like" syntax to identify and navigate nodes in an XML document
+
 
 #### ⚫ Types of XPath?
             --- Absolute XPath:
@@ -90,6 +104,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                         
                         --- Example: //div[@class='featured-box cloumnsize1']//h4[1]//b[1]
                         
+                        
 #### ⚫ How to locate elements?
             --- driver.find_element(By.ID, "id")
             
@@ -107,6 +122,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
             
             --- driver.find_element(By.CSS_SELECTOR, "css selector")
             
+            
 #### ⚫ What is page object model in Selenium?
             --- A design pattern in Selenium that creates an object repository for storing all web elements.
             --- Benefits: 
@@ -115,6 +131,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                         --- Reducing the amount of duplicated code
                         --- If the user interface changes, the fix needs changes in only one place
 
+
 #### ⚫ What is page factory model in Selenium?
             --- An inbuilt Page Object Model framework concept for Selenium WebDriver
             --- Benefits: 
@@ -122,12 +139,14 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                         --- It is used for initialization of Page objects or to instantiate the Page object itself.
                         --- Also used to initialize Page class elements without using “FindElement/s.”
                         --- @FindBy can accept tagName, partialLinkText, name, linkText, id, css, className, xpath as attributes.
-                        
+
+
 ### Step 1: Install Python
 
             --- Windows : http://python.org/download/.
 
             --- Note : IF you are using Linux, MacOS X, Unix operating Systems then python will be installed by default with OS
+
 
 ### Step 2: Install Selenium
             Use Below command on PIP to install Selenium Package
@@ -135,18 +154,23 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
 
 // This command will set up the Selenium WebDriver client library on your machine with all modules and classes that we will need to create automated scripts using Python
 
+
 ### Step 3: Upgrade Selenum (If you need)
             The optional –U flag will upgrade the existing version of the installed package
                 --- pip install -U selenium
 
+
 ### Step 4: How to know whether selenium was installed?
                 --- pip show selenium
+
 
 ### Step 5: Install Pycharm IDE
                 --- https://www.jetbrains.com/pycharm/download
                 
+                
 ### Step 6: Create a new project in PyCharm 
                 --- Keep to deafault folder to avoid issues             
+
 
 ### Step 6: Interpreter Settings -> Select Below path instead of project path  //It will install required package generally
                 --- C:\Users\ialmu\AppData\Local\Programs\Python\Python39\python.exe
