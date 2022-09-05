@@ -298,3 +298,16 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                                     
                                     def test_fristTest(setup):
                                     print('Steps of driver setup')   
+
+
+### Step 22: How to add "Conftest" file in pytest to run the same pre and post required setup instead of writing them separately in every class?  
+               --- Create a class named "conftest.py" under pytests package         // coftest.py name is mandatory
+               --- Put the abive pre and post required setup in conftest file             // example browser launch before test and close after test
+               
+               
+### Step 23: Generating HTML reports for Pytest Testcases
+               Run below command in terminal
+                        --- pip install pytest-html                     // will install html report generator
+                        
+               Run below command in terminal to run test with report
+                        --- py.test -v -s --html=report.html            // will generate report
