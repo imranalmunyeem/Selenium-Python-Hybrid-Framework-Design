@@ -216,3 +216,53 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
 ### Step 13: How to configure and run pytests?
                 --- Click on "Edit Configurations" from right -> '+' -> Python test -> pytest and then select script from directy -> apply -> click on Run 
                       
+
+### Step 14: How to run the tests from terminal?
+                --- Open terminal, copy the path of the test package, paste it to the terminal, go to that directory, use command "py.test" //it will run all test
+                --- Example: 
+                        cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests             // go to directory by using cd
+                        C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test        // use command py.test
+                        C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v     // To get more information avout test result
+                        C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s  // To print all the console logs in terminal
+                        
+### Step 15: How to run selected Pytests in Terminal from set of Tests?
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test test_testname.py -v -s      // will run specific test
+
+
+### Step 16: How to run specific method in Terminal from the set of Test methods?
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -k methodname -v -s       // will run specific method
+               
+### Step 17: Grouping tests with pytest marks to run selected group?
+               --- Import pytest, write @pytest.mark.smoke/ or anything
+                        --- Example: 
+                                    import pytest
+                                    @pytest.mark.smoke
+                                    def first_test():
+                                      print('hello')
+                           Here the test will be marked as smoke test which can be run in the terminal
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                           // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -m smoke -v -s       // m stands for mark
+               
+### Step 18: Skip particular test in termnial using mark?
+               --- Import pytest, add @pytest.mark.skip
+                        --- Example: 
+                                    import pytest
+                                    @pytest.mark.skip
+                                    def first_test():
+                                      print('hello')
+                           Here the test will be marked as smoke test which can be run in the terminal
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                  // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped  
+               
+### Step 19: How to make any specific failed test case to run but not to be added to the report?
+               --- Import pytest, add @pytest.mark.xfail
+                        --- Example: 
+                                    import pytest
+                                    @pytest.mark.xfail
+                                    def first_test():
+                                      print('hello')
+                           Here the test will be marked as smoke test which can be run in the terminal
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                  // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped from reporting                    
