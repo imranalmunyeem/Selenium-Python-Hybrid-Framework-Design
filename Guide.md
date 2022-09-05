@@ -154,8 +154,10 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
             --- Automatically detect tests
             --- Skip tests
             --- Open source
-            
-            
+   
+   
+#### ⚫ What are fixtures and their importance in pytest framework   
+
 ### Step 1: Install Python
 
             --- Windows : http://python.org/download/.
@@ -213,6 +215,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                         --- Example: 
                                    def test_login():
                                    
+                                   
 ### Step 13: How to configure and run pytests?
                 --- Click on "Edit Configurations" from right -> '+' -> Python test -> pytest and then select script from directy -> apply -> click on Run 
                       
@@ -225,6 +228,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                         C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v     // To get more information avout test result
                         C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s  // To print all the console logs in terminal
                         
+                        
 ### Step 15: How to run selected Pytests in Terminal from set of Tests?
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test test_testname.py -v -s      // will run specific test
@@ -233,6 +237,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
 ### Step 16: How to run specific method in Terminal from the set of Test methods?
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -k methodname -v -s       // will run specific method
+               
                
 ### Step 17: Grouping tests with pytest marks to run selected group?
                --- Import pytest, write @pytest.mark.smoke/ or anything
@@ -245,6 +250,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                           // go to directory by using cd
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -m smoke -v -s       // m stands for mark
                
+               
 ### Step 18: Skip particular test in termnial using mark?
                --- Import pytest, add @pytest.mark.skip
                         --- Example: 
@@ -256,6 +262,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                  // go to directory by using cd
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped  
                
+               
 ### Step 19: How to make any specific failed test case to run but not to be added to the report?
                --- Import pytest, add @pytest.mark.xfail
                         --- Example: 
@@ -265,4 +272,29 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                                       print('hello')
                            Here the test will be marked as smoke test which can be run in the terminal
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                  // go to directory by using cd
-               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped from reporting                    
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped from reporting          
+               
+### Step 20: How to add fixture in pytest to run the same pre-reqired setup before every test?
+               --- Import pytest, add @pytest.fixture
+                        --- Example: 
+                                    import pytest
+                                    @pytest.fixture                        // fixture keyword is for excuting before test like launch the browser during test
+                                    def setup():
+                                    print('I will be executed first')
+                                    
+                                    def test_fristTest(setup):
+                                    print('Steps of driver setup')   
+                                     
+                                     
+### Step 21: How to add fixture in pytest to run the same reqired post-setup after every test?  
+               --- Import pytest, add @pytest.fixture
+                        --- Example: 
+                                    import pytest
+                                    @pytest.fixture
+                                    def setup():
+                                    print('I will be executed first')
+                                    yield                                     // yeild keyword is for excuting after test like close the browser after test
+                                    print('I will be executed last')
+                                    
+                                    def test_fristTest(setup):
+                                    print('Steps of driver setup')   
