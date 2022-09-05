@@ -141,6 +141,21 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                         --- @FindBy can accept tagName, partialLinkText, name, linkText, id, css, className, xpath as attributes.
 
 
+#### ⚫ What is PyTest?
+            --- PyTest is a testing framework that allows users to write test codes using Python programming language. 
+            --- It helps you to write simple and scalable test cases for databases, APIs, or UI. 
+            --- PyTest is mainly used for writing tests for APIs. It helps to write tests from simple unit tests to complex functional tests.
+
+
+#### ⚫ What is PyTest?
+            --- Very easy to start with because of its simple and easy syntax.
+            --- Can run tests in parallel.
+            --- Can run a specific test or a subset of tests
+            --- Automatically detect tests
+            --- Skip tests
+            --- Open source
+            
+            
 ### Step 1: Install Python
 
             --- Windows : http://python.org/download/.
@@ -168,9 +183,15 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                 --- https://www.jetbrains.com/pycharm/download
                 
                 
-### Step 6: Create a new project in PyCharm 
+### Step 7: Create a new project in PyCharm 
                 --- Keep to deafault folder to avoid issues             
 
 
-### Step 6: Interpreter Settings -> Select Below path instead of project path  //It will install required package generally
+### Step 8: Interpreter Settings -> Select Below path instead of project path  //It will install required package generally
                 --- C:\Users\ialmu\AppData\Local\Programs\Python\Python39\python.exe
+
+
+### Step 9: Install pytest using below commad
+                --- pip install pytest          //install
+                --- pytest --version            // to check version
+                
