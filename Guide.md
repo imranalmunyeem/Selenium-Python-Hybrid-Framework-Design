@@ -195,3 +195,24 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                 --- pip install pytest          //install
                 --- pytest --version            // to check version
                 
+                
+### Step 10: Create a new package under existing project
+                --- Project -> New -> Python Package -> Name it pytests (Recommended)
+                
+                
+### Step 11: Create test classes under Pytests Package
+                --- Conventions you need to follow
+                        --- Test class names have to start with "test_" or end with "_test" if you want to treat them as pytests because pytest look for them and run them automatically using this.
+                        --- Example: 
+                                    test_login
+
+
+### Step 12: Create test methods inside test classes
+                --- Conventions you need to follow
+                        --- Test method names have to start with "test_" 
+                        --- Example: 
+                                   def test_login():
+                                   
+### Step 13: How to configure and run pytests?
+                --- Click on "Edit Configurations" from right -> '+' -> Python test -> pytest and then select script from directy -> apply -> click on Run 
+                      
