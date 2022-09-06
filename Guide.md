@@ -156,7 +156,37 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
             --- Open source
    
    
-#### ⚫ What are fixtures and their importance in pytest framework   
+#### ⚫ Why Printing is not a good option in Selenium?
+            --- It may solve your issues for simple scripts but for complex scripts, the printing approach will fail. Example: test cases
+            
+
+#### ⚫ What is Logging?
+            --- Python has a built-in module logging which allows writing status messages to a file or any other output streams. The file can contain the information on which part of the code is executed and what problems have been arisen.
+            
+            
+#### ⚫ Types of Logging?
+            --- Debug : These are used to give Detailed information, typically of interest only when diagnosing problems.
+            --- Info : These are used to confirm that things are working as expected
+            --- Warning : These are used an indication that something unexpected happened, or is indicative of some problem in the near future
+            --- Error : This tells that due to a more serious problem, the software has not been able to perform some function
+            --- Critical : This tells serious error, indicating that the program itself may be unable to continue running
+
+
+#### ⚫ Several logger objects offered by the module itself   
+            Logger.info(msg) : This will log a message with level INFO on this logger.
+            Logger.warning(msg) : This will log a message with a level WARNING on this logger.
+            Logger.error(msg) : This will log a message with level ERROR on this logger.
+            Logger.critical(msg) : This will log a message with level CRITICAL on this logger.
+            Logger.log(lvl,msg) : This will Logs a message with integer level lvl on this logger.
+            Logger.exception(msg) : This will log a message with level ERROR on this logger.
+            Logger.setLevel(lvl) : This function sets the threshold of this logger to lvl. This means that all the messages below this level will be ignored.
+            Logger.addFilter(filt) : This adds a specific filter filt into this logger.
+            Logger.removeFilter(filt) : This removes a specific filter filt into this logger.
+            Logger.filter(record) : This method applies the logger’s filter to the record provided and returns True if the record is to be processed. Else, it will return False.
+            Logger.addHandler(hdlr) : This adds a specific handler hdlr to this logger.
+            Logger.removeHandler(hdlr) : This removes a specific handler hdlr into this logger.
+            Logger.hasHandlers() : This checks if the logger has any handler configured or not. 
+
 
 ### Step 1: Install Python
 
