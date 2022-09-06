@@ -12,29 +12,29 @@
             
 ###  ⚫ Framework folder structure: 
             ---> Project
-                        ---> pageObjects
+                        ---> pageObjects (Package)
                                     ---> page classes those contains locators
                                     
-                        ---> testCases
-                                    ---> Contains test classes                                   
+                        ---> testCases (Package)
+                                    ---> Contains test classes       
                                     
-                        ---> Configurations
+                        ---> utilities (Package)
+                                    ---> Contains base class & other necessary utilities
+                                    
+                        ---> Configurations (Folder)
                                     ---> Contains setup
                                     
-                        ---> Logs
+                        ---> Logs (Folder)
                                     ---> Contains logs 
                                     
-                        ---> Screenshots
+                        ---> Screenshots (Folder)
                                     ---> Contains screenshots
                                     
-                        ---> Reports
+                        ---> Reports (Folder)
                                     ---> Contains html report
                                     
-                        ---> TestData
+                        ---> TestData (Folder)
                                     ---> Contains demo data
-                                    
-                        ---> utilities
-                                    ---> Contains base class & other necessary utilities
                                     
                         ---> Run.bat     //To run with a single click            
 
