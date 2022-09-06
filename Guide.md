@@ -9,8 +9,27 @@
             ---> Integration of framework to Jenkins
             
 ###  ⚫ Framework Design Step by Step            
+
+### Step 1: Install Python
+
+            --- Windows : http://python.org/download/.
+
+            --- Note : IF you are using Linux, MacOS X, Unix operating Systems then python will be installed by default with OS
             
-###  ⚫ Framework folder structure: 
+ ###         Install Pycharm IDE
+                --- https://www.jetbrains.com/pycharm/download                
+
+
+### Step 2: Create a new project and install required plugins
+            --- Selenium            // Selenium libraries
+            --- Pytest              // Python unit test framwork
+            --- pytest-html         // HTML Report
+            --- pytest-xdist        // To run test parallelly
+            --- Openpyxl            // MS Excel Support
+            --- Allure-pytest       // Allure Report
+
+
+### Step 3: Create Framework folder structure: 
             ---> Project
                         ---> pageObjects (Package)
                                     ---> page classes those contains locators
@@ -36,53 +55,10 @@
                         ---> TestData (Folder)
                                     ---> Contains demo data
                                     
-                        ---> Run.bat     //To run with a single click            
-
-### Step 1: Install Python
-
-            --- Windows : http://python.org/download/.
-
-            --- Note : IF you are using Linux, MacOS X, Unix operating Systems then python will be installed by default with OS
-
-
-### Step 2: Install Selenium
-            Use Below command on PIP to install Selenium Package
-                --- pip install selenium
-
-// This command will set up the Selenium WebDriver client library on your machine with all modules and classes that we will need to create automated scripts using Python
-
-
-### Step 3: Upgrade Selenum (If you need)
-            The optional –U flag will upgrade the existing version of the installed package
-                --- pip install -U selenium
-
-
-### Step 4: How to know whether selenium was installed?
-                --- pip show selenium
-
-
-### Step 5: Install Pycharm IDE
-                --- https://www.jetbrains.com/pycharm/download
+                        ---> Run.bat     //To run with a single click  
+                        
                 
-                
-### Step 7: Create a new project in PyCharm 
-                --- Keep to deafault folder to avoid issues             
-
-
-### Step 8: Interpreter Settings -> Select Below path instead of project path  //It will install required package generally
-                --- C:\Users\ialmu\AppData\Local\Programs\Python\Python39\python.exe
-
-
-### Step 9: Install pytest using below commad
-                --- pip install pytest          //install
-                --- pytest --version            // to check version
-                
-                
-### Step 10: Create a new package under existing project
-                --- Project -> New -> Python Package -> Name it pytests (Recommended)
-                
-                
-### Step 11: Create test classes under Pytests Package
+### Step 11: Create test classes under testCases Package
                 --- Conventions you need to follow
                         --- Test class names have to start with "test_" or end with "_test" if you want to treat them as pytests because pytest look for them and run them automatically using this.
                         --- Example: 
