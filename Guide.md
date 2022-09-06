@@ -8,6 +8,176 @@
             ---> Git
             ---> Integration of framework to Jenkins
             
+###  ⚫ Framework Design Step by Step            
+            
+###  ⚫ Framework folder structure: 
+            ---> Project
+                        ---> pageObjects
+                                    ---> page classes those contains locators
+                        ---> reports
+                                    ---> Contains HTML reports
+                        ---> TestData
+                                    ---> Contains demo data
+                        ---> tests
+                                    ---> Contains test classes
+                        ---> utilities
+                                    ---> Contains base class & other necessary utilities
+
+### Step 1: Install Python
+
+            --- Windows : http://python.org/download/.
+
+            --- Note : IF you are using Linux, MacOS X, Unix operating Systems then python will be installed by default with OS
+
+
+### Step 2: Install Selenium
+            Use Below command on PIP to install Selenium Package
+                --- pip install selenium
+
+// This command will set up the Selenium WebDriver client library on your machine with all modules and classes that we will need to create automated scripts using Python
+
+
+### Step 3: Upgrade Selenum (If you need)
+            The optional –U flag will upgrade the existing version of the installed package
+                --- pip install -U selenium
+
+
+### Step 4: How to know whether selenium was installed?
+                --- pip show selenium
+
+
+### Step 5: Install Pycharm IDE
+                --- https://www.jetbrains.com/pycharm/download
+                
+                
+### Step 7: Create a new project in PyCharm 
+                --- Keep to deafault folder to avoid issues             
+
+
+### Step 8: Interpreter Settings -> Select Below path instead of project path  //It will install required package generally
+                --- C:\Users\ialmu\AppData\Local\Programs\Python\Python39\python.exe
+
+
+### Step 9: Install pytest using below commad
+                --- pip install pytest          //install
+                --- pytest --version            // to check version
+                
+                
+### Step 10: Create a new package under existing project
+                --- Project -> New -> Python Package -> Name it pytests (Recommended)
+                
+                
+### Step 11: Create test classes under Pytests Package
+                --- Conventions you need to follow
+                        --- Test class names have to start with "test_" or end with "_test" if you want to treat them as pytests because pytest look for them and run them automatically using this.
+                        --- Example: 
+                                    test_login
+
+
+### Step 12: Create test methods inside test classes
+                --- Conventions you need to follow
+                        --- Test method names have to start with "test_" 
+                        --- Example: 
+                                   def test_login():
+                                   
+                                   
+### Step 13: How to configure and run pytests?
+                --- Click on "Edit Configurations" from right -> '+' -> Python test -> pytest and then select script from directy -> apply -> click on Run 
+                      
+
+### Step 14: How to run the tests from terminal?
+                --- Open terminal, copy the path of the test package, paste it to the terminal, go to that directory, use command "py.test" //it will run all test
+                --- Example: 
+                        cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests             // go to directory by using cd
+                        C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test        // use command py.test
+                        C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v     // To get more information avout test result
+                        C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s  // To print all the console logs in terminal
+                        
+                        
+### Step 15: How to run selected Pytests in Terminal from set of Tests?
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test test_testname.py -v -s      // will run specific test
+
+
+### Step 16: How to run specific method in Terminal from the set of Test methods?
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -k methodname -v -s       // will run specific method
+               
+               
+### Step 17: Grouping tests with pytest marks to run selected group?
+               --- Import pytest, write @pytest.mark.smoke/ or anything
+                        --- Example: 
+                                    import pytest
+                                    @pytest.mark.smoke
+                                    def first_test():
+                                      print('hello')
+                           Here the test will be marked as smoke test which can be run in the terminal
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                           // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -m smoke -v -s       // m stands for mark
+               
+               
+### Step 18: Skip particular test in termnial using mark?
+               --- Import pytest, add @pytest.mark.skip
+                        --- Example: 
+                                    import pytest
+                                    @pytest.mark.skip
+                                    def first_test():
+                                      print('hello')
+                           Here the test will be marked as smoke test which can be run in the terminal
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                  // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped  
+               
+               
+### Step 19: How to make any specific failed test case to run but not to be added to the report?
+               --- Import pytest, add @pytest.mark.xfail
+                        --- Example: 
+                                    import pytest
+                                    @pytest.mark.xfail
+                                    def first_test():
+                                      print('hello')
+                           Here the test will be marked as smoke test which can be run in the terminal
+               --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                  // go to directory by using cd
+               --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped from reporting          
+               
+### Step 20: How to add fixture in pytest to run the same pre-reqired setup before every test?
+               --- Import pytest, add @pytest.fixture
+                        --- Example: 
+                                    import pytest
+                                    @pytest.fixture                        // fixture keyword is for excuting before test like launch the browser during test
+                                    def setup():
+                                    print('I will be executed first')
+                                    
+                                    def test_fristTest(setup):
+                                    print('Steps of driver setup')   
+                                     
+                                     
+### Step 21: How to add fixture in pytest to run the same reqired post-setup after every test?  
+               --- Import pytest, add @pytest.fixture
+                        --- Example: 
+                                    import pytest
+                                    @pytest.fixture
+                                    def setup():
+                                    print('I will be executed first')
+                                    yield                                     // yeild keyword is for excuting after test like close the browser after test
+                                    print('I will be executed last')
+                                    
+                                    def test_fristTest(setup):
+                                    print('Steps of driver setup')   
+
+
+### Step 22: How to add "Conftest" file in pytest to run the same pre and post required setup instead of writing them separately in every class?  
+               --- Create a class named "conftest.py" under pytests package         // coftest.py name is mandatory
+               --- Put the abive pre and post required setup in conftest file             // example browser launch before test and close after test
+               
+               
+### Step 23: Generating HTML reports for Pytest Testcases
+               Run below command in terminal
+                        --- pip install pytest-html                     // will install html report generator
+                        
+               Run below command in terminal to run test with report
+                        --- py.test -v -s --html=report.html            // will generate report
+
+
 ###  ⚫ Theory
 
 #### ⚫ What is PIP installer Tool?
@@ -75,9 +245,6 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                                     driver.implicitly_wait(10) # seconds
                                     driver.get("http://somedomain/url_that_delays_loading")
                                     myDynamicElement = driver.find_element_by_id("myDynamicElement")
-
-
-###  ⚫ Framework Design Step by Step
 
 
 #### ⚫ What is XPath?
@@ -154,44 +321,37 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
             --- Automatically detect tests
             --- Skip tests
             --- Open source
+   
+   
+#### ⚫ Why Printing is not a good option in Selenium?
+            --- It may solve your issues for simple scripts but for complex scripts, the printing approach will fail. Example: test cases
+            
+
+#### ⚫ What is Logging?
+            --- Python has a built-in module logging which allows writing status messages to a file or any other output streams. The file can contain the information on which part of the code is executed and what problems have been arisen.
             
             
-### Step 1: Install Python
-
-            --- Windows : http://python.org/download/.
-
-            --- Note : IF you are using Linux, MacOS X, Unix operating Systems then python will be installed by default with OS
-
-
-### Step 2: Install Selenium
-            Use Below command on PIP to install Selenium Package
-                --- pip install selenium
-
-// This command will set up the Selenium WebDriver client library on your machine with all modules and classes that we will need to create automated scripts using Python
+#### ⚫ Types of Logging?
+            --- Debug : These are used to give Detailed information, typically of interest only when diagnosing problems.
+            --- Info : These are used to confirm that things are working as expected
+            --- Warning : These are used an indication that something unexpected happened, or is indicative of some problem in the near future
+            --- Error : This tells that due to a more serious problem, the software has not been able to perform some function
+            --- Critical : This tells serious error, indicating that the program itself may be unable to continue running
 
 
-### Step 3: Upgrade Selenum (If you need)
-            The optional –U flag will upgrade the existing version of the installed package
-                --- pip install -U selenium
+#### ⚫ Several logger objects offered by the module itself   
+            Logger.info(msg) : This will log a message with level INFO on this logger.
+            Logger.warning(msg) : This will log a message with a level WARNING on this logger.
+            Logger.error(msg) : This will log a message with level ERROR on this logger.
+            Logger.critical(msg) : This will log a message with level CRITICAL on this logger.
+            Logger.log(lvl,msg) : This will Logs a message with integer level lvl on this logger.
+            Logger.exception(msg) : This will log a message with level ERROR on this logger.
+            Logger.setLevel(lvl) : This function sets the threshold of this logger to lvl. This means that all the messages below this level will be ignored.
+            Logger.addFilter(filt) : This adds a specific filter filt into this logger.
+            Logger.removeFilter(filt) : This removes a specific filter filt into this logger.
+            Logger.filter(record) : This method applies the logger’s filter to the record provided and returns True if the record is to be processed. Else, it will return False.
+            Logger.addHandler(hdlr) : This adds a specific handler hdlr to this logger.
+            Logger.removeHandler(hdlr) : This removes a specific handler hdlr into this logger.
+            Logger.hasHandlers() : This checks if the logger has any handler configured or not. 
 
 
-### Step 4: How to know whether selenium was installed?
-                --- pip show selenium
-
-
-### Step 5: Install Pycharm IDE
-                --- https://www.jetbrains.com/pycharm/download
-                
-                
-### Step 7: Create a new project in PyCharm 
-                --- Keep to deafault folder to avoid issues             
-
-
-### Step 8: Interpreter Settings -> Select Below path instead of project path  //It will install required package generally
-                --- C:\Users\ialmu\AppData\Local\Programs\Python\Python39\python.exe
-
-
-### Step 9: Install pytest using below commad
-                --- pip install pytest          //install
-                --- pytest --version            // to check version
-                
