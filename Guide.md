@@ -14,14 +14,29 @@
             ---> Project
                         ---> pageObjects
                                     ---> page classes those contains locators
-                        ---> reports
-                                    ---> Contains HTML reports
+                                    
+                        ---> testCases
+                                    ---> Contains test classes                                   
+                                    
+                        ---> Configurations
+                                    ---> Contains setup
+                                    
+                        ---> Logs
+                                    ---> Contains logs 
+                                    
+                        ---> Screenshots
+                                    ---> Contains screenshots
+                                    
+                        ---> Reports
+                                    ---> Contains html report
+                                    
                         ---> TestData
                                     ---> Contains demo data
-                        ---> tests
-                                    ---> Contains test classes
+                                    
                         ---> utilities
                                     ---> Contains base class & other necessary utilities
+                                    
+                        ---> Run.bat     //To run with a single click            
 
 ### Step 1: Install Python
 
