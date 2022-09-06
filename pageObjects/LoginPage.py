@@ -1,26 +1,23 @@
-from selenium.webdriver.common.by import By
-
-from pageObjects.LoginPage import LoginPage
-
-
 class LoginPage:
+    # Login Page
+    textbox_username_id = "Email"
+    textbox_password_id = "Password"
+    button_login_xpath = "//input[@value='Log in']"
+    link_logout_linktext = "Logout"
 
-    def __init__(self, driver):
-        self.driver = driver
+    def __init__(self,driver):
+        self.driver=driver
 
-    email = (By.ID, "Email")
-    password = (By.ID, "Password")
-    loginButton = (By.XPATH, "/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/button")
+    def setUserName(self, username):
+        self.driver.find_element_by_id(self.textbox_username_id).clear()
+        self.driver.find_element_by_id(self.textbox_username_id).send_keys(username)
 
+    def setPassword(self, password):
+        self.driver.find_element_by_id(self.textbox_password_id).clear()
+        self.driver.find_element_by_id(self.textbox_password_id).send_keys(password)
 
-    def getEmail(self):
-        return self.driver.find_element(*LoginPage.email)
+    def clickLogin(self):
+        self.driver.find_element_by_xpath(self.button_login_xpath).click()
 
-    def getPassword(self):
-        return self.driver.find_element(*LoginPage.password)
-
-    def clickOnlogin(self):
-        return self.driver.find_element(*LoginPage.loginButton)
-
-
-
+    def clickLogout(self):
+        self.driver.find_element_by_link_text(self.link_logout_linktext).click()
