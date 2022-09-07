@@ -261,24 +261,7 @@ pip is a recursive acronym that can stand for either "Pip Installs Packages" or 
                         --- Relative Xpath is always preferred as it is not a complete path from the root element.
                         
                         --- Example: //div[@class='featured-box cloumnsize1']//h4[1]//b[1]
-                        
-                        
-#### ⚫ How to locate elements?
-            --- driver.find_element(By.ID, "id")
-            
-            --- driver.find_element(By.NAME, "name")
-            
-            --- driver.find_element(By.XPATH, "xpath")
-            
-            --- driver.find_element(By.LINK_TEXT, "link text")
-            
-            --- driver.find_element(By.PARTIAL_LINK_TEXT, "partial link text")
-            
-            --- driver.find_element(By.TAG_NAME, "tag name")
-            
-            --- driver.find_element(By.CLASS_NAME, "class name")
-            
-            --- driver.find_element(By.CSS_SELECTOR, "css selector")
+                                             
             
             
 #### ⚫ What is page object model in Selenium?
