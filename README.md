@@ -1,27 +1,61 @@
 # Selenium-Python-Hybrid-Framework-Design
-            
-###  ⚫ Framework Design Step by Step            
+ 
+### Objectives/Goals of this Framework
+    ✅ Customization            -> Tailor the framework precisely depending on the project's needs.
+    ✅ Flexibility              -> Combine testing approaches for versatile test scenarios.
+    ✅ Reusability              -> Create reusable components for efficient testing.
+    ✅ Modularity               -> Break down the application into manageable modules for easier maintenance.
+    ✅ Separation of Concerns   -> Keep test scripts, data, and logic separate for clarity.
+    ✅ Ease of Maintenance      -> Changes are isolated, making maintenance easier.
+    ✅ Scalability              -> Extend the framework to handle larger projects or new features.
+    ✅ Integration              -> Seamlessly integrate with CI/CD pipelines and other tools.
+    ✅ Cross-Team Collaboration -> Provide a common ground for effective collaboration.
+    ✅ Skill Enhancement        -> Boost team skills in testing, programming, and automation.
+    ✅ Adaptability             -> Keep automation relevant by integrating new technologies.
 
-### Step 1: Install Python
+### Tools, Packages, Concept, Frameworks Used to build this framework:
+    ✅ Selenium WebDriver   -> To interact with web elements and perform actions on web pages.
 
-            --- Windows : http://python.org/download/.
+    ✅ Python               -> To write test scripts and framework code.
 
-            --- Note : IF you are using Linux, MacOS X, Unix operating Systems then python will be installed by default with OS
-            
- ###         Install Pycharm IDE
-                --- https://www.jetbrains.com/pycharm/download                
+    ✅ Pytest or Unittest   -> To organize and run your test cases.
 
+    ✅ Page Object Model    -> A design pattern for organizing code by creating a separate class for each page or component of your application.
 
-### Step 2: Create a new project and install required plugins
-            --- Selenium            // Selenium libraries
-            --- Pytest              // Python unit test framwork
-            --- pytest-html         // HTML Report
-            --- pytest-xdist        // To run test parallelly
-            --- Openpyxl            // MS Excel Support
-            --- Allure-pytest       // Allure Report
+    ✅ Test Data Management -> Libraries like yaml or json to manage test data separately from the test scripts.
 
+    ✅ Logging              -> Python's built-in logging module to create detailed logs of test execution.
 
-### Step 3: Create Framework folder structure: 
+    ✅ Reporting            -> Libraries like pytest-html, Allure, or custom reporting to generate reports.
+
+    ✅ Version Control      -> Git for version control to keep track of changes.
+
+    ✅ CI/CD Tool           -> Jenkins for automating test execution.
+
+    ✅ IDE                  -> PyCharm.
+
+    ✅ Browser Drivers      -> ChromeDriver, GeckoDriver for Firefox.
+
+    ✅ Package Management   -> Python's package manager, pip to install and manage third-party libraries.
+
+    ✅ OOP                  -> Python's OOP features to structure framework with classes and objects, enhancing modularity.
+
+    ✅ Selectors            -> Techniques for locating web elements on the page, essential for interaction in Selenium.
+
+    ✅ Data Driven          -> Libraries like ddt to enable data-driven testing where the same test case is executed with different inputs.
+
+# Steps to build this framework
+### Step 1: Create new Project and install required packages/plugins
+###### Go to -> File ->Settings ->Project ->Project Interpreter ->Install the following packages
+    ✅ Selenium: Selenium Libraries
+    ✅ Pytest: Python Unit Test Framework
+    ✅ pytest-html: PyTest Html Report
+    ✅ pytest-xdist: Run test parallelly
+    ✅ Openpyxl: MS Excel Support
+    ✅ Allure-pytest: Generate allure report
+    
+### Step 2: Create the folder structure
+######      Project Name
             ---> Project
                         ---> pageObjects (Package)
                                     ---> page classes those contains locators
@@ -49,49 +83,44 @@
                                     
                         ---> Run.bat     //To run with a single click  
                         
-                        
-### Step 4: Automate Test Cases
-            --- Create page classes under pageObjects 
-            --- Create test classes under testCases
-            
+![folder structure](https://github.com/imranalmunyeem/Selenium4-Hybrid-Framework-Design/blob/main/folderstructure.png)
 
-                        
-### Step 5: Capture Screenshots on Failures
-            --- Update test cases with screenshots under testcases
-            
- 
- 
+### Step 3: Automate some test cases
+    ✅ Create Page Object Class under "pageObjects"
+    ✅ Create test classes under "testCases"
+    ✅ Create conftest.py under "testcases"
+
+### Step 4: Capture Screenshot on failure
+    ✅ Update test cases with screenshots under testcases
+
 ### Step 5: Read common values from ini file
-            --- Add "config.ini" file under "configuration" folder.
-            --- Create "readProperties.py" utility file under "utilities" package to read common data.
-            --- Replace the hard coded values in test casess.
+    ✅ Add "config.ini" file under "configuration" folder.
+    ✅ Create "readProperties.py" utility file under "utilities" package to read common data.
+    ✅ Replace the hard coded values in test casess.
             
-            
-### Step 5: Add logs to test cases
-            --- Add "config.ini" file under "configuration" folder.
-            --- Create "readProperties.py" utility file under "utilities" package to read common data.
-            --- Replace the hard coded values in test casess.
-            
-            
-### Step 11: Create test classes under testCases Package
+### Step 6: Add logs to test cases
+    ✅ Add "config.ini" file under "configuration" folder.
+    ✅ Create "readProperties.py" utility file under "utilities" package to read common data.
+    ✅ Replace the hard coded values in test casess.
+                     
+### Step 7: Create test classes under testCases Package
                 --- Conventions you need to follow
                         --- Test class names have to start with "test_" or end with "_test" if you want to treat them as pytests because pytest look for them and run them automatically using this.
                         --- Example: 
                                     test_login
 
-
-### Step 12: Create test methods inside test classes
+### Step 8: Create test methods inside test classes
                 --- Conventions you need to follow
                         --- Test method names have to start with "test_" 
                         --- Example: 
                                    def test_login():
                                    
                                    
-### Step 13: How to configure and run pytests?
+### Step 9: How to configure and run pytests?
                 --- Click on "Edit Configurations" from right -> '+' -> Python test -> pytest and then select script from directy -> apply -> click on Run 
                       
 
-### Step 14: How to run the tests from terminal?
+### Step 10: How to run the tests from terminal?
                 --- Open terminal, copy the path of the test package, paste it to the terminal, go to that directory, use command "py.test" //it will run all test
                 --- Example: 
                         cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests             // go to directory by using cd
@@ -100,17 +129,17 @@
                         C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s  // To print all the console logs in terminal
                         
                         
-### Step 15: How to run selected Pytests in Terminal from set of Tests?
+### Step 11: How to run selected Pytests in Terminal from set of Tests?
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test test_testname.py -v -s      // will run specific test
 
 
-### Step 16: How to run specific method in Terminal from the set of Test methods?
+### Step 12: How to run specific method in Terminal from the set of Test methods?
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                                // go to directory by using cd
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -k methodname -v -s       // will run specific method
                
                
-### Step 17: Grouping tests with pytest marks to run selected group?
+### Step 13: Grouping tests with pytest marks to run selected group?
                --- Import pytest, write @pytest.mark.smoke/ or anything
                         --- Example: 
                                     import pytest
@@ -122,7 +151,7 @@
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -m smoke -v -s       // m stands for mark
                
                
-### Step 18: Skip particular test in termnial using mark?
+### Step 14: Skip particular test in termnial using mark?
                --- Import pytest, add @pytest.mark.skip
                         --- Example: 
                                     import pytest
@@ -134,7 +163,7 @@
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped  
                
                
-### Step 19: How to make any specific failed test case to run but not to be added to the report?
+### Step 15: How to make any specific failed test case to run but not to be added to the report?
                --- Import pytest, add @pytest.mark.xfail
                         --- Example: 
                                     import pytest
@@ -145,7 +174,7 @@
                --- cd C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests                  // go to directory by using cd
                --- C:\Users\ialmu\PycharmProjects\Selenium-Python-Hybrid-Framework-Design\pytests>py.test -v -s       // marked test will be skipped from reporting          
                
-### Step 20: How to add fixture in pytest to run the same pre-reqired setup before every test?
+### Step16: How to add fixture in pytest to run the same pre-reqired setup before every test?
                --- Import pytest, add @pytest.fixture
                         --- Example: 
                                     import pytest
@@ -157,7 +186,7 @@
                                     print('Steps of driver setup')   
                                      
                                      
-### Step 21: How to add fixture in pytest to run the same reqired post-setup after every test?  
+### Step 17: How to add fixture in pytest to run the same reqired post-setup after every test?  
                --- Import pytest, add @pytest.fixture
                         --- Example: 
                                     import pytest
@@ -171,12 +200,12 @@
                                     print('Steps of driver setup')   
 
 
-### Step 22: How to add "Conftest" file in pytest to run the same pre and post required setup instead of writing them separately in every class?  
+### Step 18: How to add "Conftest" file in pytest to run the same pre and post required setup instead of writing them separately in every class?  
                --- Create a class named "conftest.py" under pytests package         // coftest.py name is mandatory
                --- Put the abive pre and post required setup in conftest file             // example browser launch before test and close after test
                
                
-### Step 23: Generating HTML reports for Pytest Testcases
+### Step 19: Generating HTML reports for Pytest Testcases
                Run below command in terminal
                         --- pip install pytest-html                     // will install html report generator
                         
